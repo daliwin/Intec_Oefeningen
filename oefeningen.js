@@ -57,7 +57,7 @@ function max(nbr) {
 
 nbr = [10, 20, 30, 85, 6]
 max(nbr)
-console.log(max(nbr))
+console.log(nbr + ' --> ' + max(nbr))
 
 
 
@@ -121,7 +121,7 @@ function longestWord(words) {
 }
 
 words = ['test', 'test1234', 'test12', 'test123']
-console.log(longestWord(words))
+console.log(words + ' --> ' + longestWord(words))
 
 
 
@@ -156,10 +156,10 @@ function palindroom(word) {
 	return true
 }
 
-console.log(palindroom('pap'))
-console.log(palindroom('neen'))
-console.log(palindroom('meetsysteem'))
-console.log(palindroom('mlhjghjgeim'))
+console.log('pap ----------> ' + palindroom('pap'))
+console.log('neen ---------> ' +palindroom('neen'))
+console.log('meetsysteem --> ' + palindroom('meetsysteem'))
+console.log('mlhjghjgeim --> ' + palindroom('mlhjghjgeim'))
 
 
 
@@ -191,7 +191,7 @@ function camelCase(words) {
 }
 
 camel = ['create', 'text', 'node', 'test']
-console.log(camelCase(camel))
+console.log(camel + ' --> ' + camelCase(camel))
 
 
 
@@ -269,7 +269,8 @@ function maxArray(a) {
 	return max
 }
 
-console.log(maxArray([1, 2, 33, 4])) // ==> 33
+var array = [1, 2, 33 , 4]
+console.log('the biggest number from array: ' + array + ' is --> ' + maxArray(array))
 
 
 
@@ -285,28 +286,29 @@ console.log('')
 
 
 function fib(n) {
-	var a, b, temp
+	var a, b, c
 	a = 1
 	b = 0
-	temp = 0
+	c = 0
 	
 	while(n > 0) {
-		temp = a
+		c = a
 		a = a + b
-		b = temp
+		b = c
 		n--
 	}
 	return b
 }
 
-console.log(fib(0))
-console.log(fib(1))
-console.log(fib(2))
-console.log(fib(3))
-console.log(fib(4))
-console.log(fib(5))
-console.log(fib(6))
-console.log(fib(7))
+console.log('F0 = ' + fib(0))
+console.log('F1 = ' + fib(1))
+console.log('F2 = ' + fib(2))
+console.log('F3 = ' + fib(3))
+console.log('F4 = ' + fib(4))
+console.log('F5 = ' + fib(5))
+console.log('F6 = ' + fib(6))
+console.log('F7 = ' + fib(7))
+console.log('F8 = ' + fib(8))
 
 
 
@@ -341,17 +343,15 @@ console.log('')
 
 
 function dambord(a, b) {
-	var black = '0'
-	var white = '1'
 	var temp = 0
 	var line = ''
 	for (var i = 0; i < b; i++) {
 		for (var x = 0; x < a; x++) {
 			if(temp == 0) {
-				line = line + black
+				line = line + '0'
 				temp = 1
 			} else {
-				line = line + white
+				line = line + '1'
 				temp = 0
 			}
 		}
@@ -361,7 +361,7 @@ function dambord(a, b) {
 	return line
 }
 
-console.log(dambord(35, 25))
+console.log(dambord(15, 9))
 
 
 
@@ -421,12 +421,6 @@ console.log(fancy(' this is a test blabla '))
 
 
 
-
-
-
-
-
-
 console.log('')
 console.log('---------Sqrt--------------')
 console.log('')
@@ -444,14 +438,17 @@ Calculate the square root of n as follows:
 */
 
 function sqrt(n) {
-
+	for(var guess = makeGuess(); !checkGuess(n, guess); guess = improveGuess(n, guess))
+	
+	return guess
 }
 
 // hints: define and use these functions:
 
 function makeGuess(n) {
-	return n / 2
   // guess a square root for n (example: n/2)
+	return n / 2
+	
   // a guess is only a guess, not the answer
   // doesn't have to be correct just "close"
 	
@@ -460,6 +457,7 @@ function makeGuess(n) {
 function checkGuess(n, guess) {
   // check if "guess" is a good enough guess
   // do this by checking the difference of "square of guess" and "n"
+	
 }
 
 function improveGuess(n, guess) {
@@ -467,4 +465,4 @@ function improveGuess(n, guess) {
   return (guess + n / guess) / 2
 }
 
-console.log(sqrt(9))
+//console.log(sqrt(9))
