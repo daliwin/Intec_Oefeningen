@@ -307,3 +307,164 @@ console.log(fib(4))
 console.log(fib(5))
 console.log(fib(6))
 console.log(fib(7))
+
+
+
+
+
+
+
+
+console.log('')
+console.log('---------Dambord--------------')
+console.log('')
+
+
+//maak een functie die een N*M dambord print (mbv console.log)
+//print 0 voor zwarte vakken en 1 voor witte vakken.
+//begin links vanboven met een 0
+//
+// bvb een 8*4 dambord:
+//
+//   0101010101
+//   1010101010
+//   0101010101
+//   1010101010
+//
+// bvb een 2*3 dambord:
+//
+//   01
+//   10
+//   01
+//
+// etc...
+
+
+function dambord(a, b) {
+	var black = '0'
+	var white = '1'
+	var temp = 0
+	var line = ''
+	for (var i = 0; i < b; i++) {
+		for (var x = 0; x < a; x++) {
+			if(temp == 0) {
+				line = line + black
+				temp = 1
+			} else {
+				line = line + white
+				temp = 0
+			}
+		}
+		console.log(line)
+		line = ''
+	}
+	return line
+}
+
+console.log(dambord(35, 25))
+
+
+
+
+
+
+
+
+
+
+
+console.log('')
+console.log('---------Fancy comment box--------------')
+console.log('')
+
+// maak een functie die een "fancy comment box" aanmaakt.
+// bvb:
+
+/******************************
+* this is a fancy comment box *
+******************************/
+
+function fancy(n) {
+	//var length = n.lenght + 2
+	var line = ''
+	for(var i = 0; i < n.length + 2; i++) {
+		if(i == 0) {
+			line = line + '/'
+		} else {
+			line = line + '*'
+		}
+	}
+	
+	line = line + '\n'
+	line = line + '*' + n + '*'
+	line = line + '\n'
+	
+	for(var x = 0; x <= n.length + 2; x++) {
+		if (x == n.length + 1) {
+			line = line + '/'
+			break
+		} else {
+			line = line + '*'
+		}
+	}
+	return line
+}
+
+console.log(fancy(' this is a test blabla '))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log('')
+console.log('---------Sqrt--------------')
+console.log('')
+
+
+// !!! BONUS EXERCISE !!!
+
+/*
+Calculate the square root of n as follows:
+
+  1 start with a guess
+  2 if your guess is good enough, return your guess
+  3 improve your guess
+  4 repeat step 2
+*/
+
+function sqrt(n) {
+
+}
+
+// hints: define and use these functions:
+
+function makeGuess(n) {
+	return n / 2
+  // guess a square root for n (example: n/2)
+  // a guess is only a guess, not the answer
+  // doesn't have to be correct just "close"
+	
+}
+
+function checkGuess(n, guess) {
+  // check if "guess" is a good enough guess
+  // do this by checking the difference of "square of guess" and "n"
+}
+
+function improveGuess(n, guess) {
+  // return an improved guess
+  return (guess + n / guess) / 2
+}
+
+console.log(sqrt(9))
