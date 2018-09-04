@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Homework Thursday</title>
+</head>
+
+<body>
+	<script>
+		function text(str) {
+			// text takes a string of content and returns a TextNode
+			// example: text('test') would return a TextNode with "test" as content.
+			return document.createTextNode(str)
+		}
+
+		function elem(tag) {
+			// takes a string of a tagname and returns an element with that tag
+			// example: elem('h1') would return an (empty) H1 element
+			return document.createElement(tag)
+		}
+
+		function append(parent, children) {
+
+			// given a parent node and a list of children, append all the children to the parent and return the parent
+			// example: append(elem('h1'), [text('title')]) would return an H1 element with "title" as content.
+			console.log(children)
+			console.log(parent)
+			
+			for (var i = 0; i < children.length; i++) {
+				var child = children[i]
+				parent.appendChild(child)
+			}
+			//parent.appendChild(child)
+			return parent
+		}
+		
+		function crel(parent) {
+			
+			
+		}
+		
+		var page = crel()
+
+		var title = append(elem('h1'), text('title'))
+		document.body.appendChild(title)
+	</script>
+
+
+
+</body>
+
+</html>
