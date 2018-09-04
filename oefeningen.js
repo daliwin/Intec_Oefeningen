@@ -285,15 +285,25 @@ console.log('')
 
 
 function fib(n) {
-	if (n < 0) {
-		return -1
-	} 
+	var a, b, temp
+	a = 1
+	b = 0
+	temp = 0
 	
-	if (n > 0 && n < 2) {
-		return n
+	while(n > 0) {
+		temp = a
+		a = a + b
+		b = temp
+		n--
 	}
-		
-	return (fib(n - 1) + fib(n - 2))
+	return b
 }
 
+console.log(fib(0))
+console.log(fib(1))
+console.log(fib(2))
+console.log(fib(3))
 console.log(fib(4))
+console.log(fib(5))
+console.log(fib(6))
+console.log(fib(7))
